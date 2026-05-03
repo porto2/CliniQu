@@ -1,5 +1,6 @@
-# ClinIQ
-### Modern Care by AI Power Service
+<p align="center">
+  <img src="banner.svg" alt="ClinIQ Banner"/>
+</p>
 
 
 
