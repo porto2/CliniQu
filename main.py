@@ -9,6 +9,7 @@ import faiss
 import fitz
 
 from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from groq import Groq
 from langdetect import detect
@@ -60,6 +61,13 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="ClinIQ API", version="1.0.0", lifespan=lifespan)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 def train_classifier():
