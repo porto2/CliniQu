@@ -10,7 +10,6 @@ import fitz
 
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from groq import Groq
 from langdetect import detect
@@ -70,12 +69,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 
 def train_classifier():
