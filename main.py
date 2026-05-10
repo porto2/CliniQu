@@ -64,10 +64,14 @@ app = FastAPI(title="ClinIQ API", version="1.0.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://cliniqu.vercel.app", "https://business-analytic-ai.vercel.app"],
+    allow_origins=["https://cliniqu.vercel.app", "https://business-analytic-ai.vercel.app", "https://kik3333-cliniqu-api.hf.space"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/health")
+def health_check():
+    return {"status": "ClinIQ API is running"}
 
 
 
